@@ -13,7 +13,7 @@ const navItems = [
   },
   {
     icon: "place",
-    link: "/place",
+    link: "/place/miami",
   },
   {
     icon: "person",
