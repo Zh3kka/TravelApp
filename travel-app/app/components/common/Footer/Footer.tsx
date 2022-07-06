@@ -2,7 +2,12 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import { useRouter } from "next/router";
 
-const navItems = [
+type TypeNavItem = {
+  icon: string;
+  link: string;
+};
+
+const navItems: TypeNavItem[] = [
   {
     icon: "home",
     link: "/",
