@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children }) => {
   return (
     <div>
-      <div>{children}</div>
+      <div style={{maxWidth: 480, margin: '0 auto'}}>{children}</div>
 
       <Footer />
     </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { GetStaticProps, NextPage } from "next";
 import { API_URL } from "../app/constants";
 import { IPlace } from "../app/types/place";
@@ -9,17 +10,24 @@ import PopularPlaces from "../app/components/elements/PopularPlaces/PopularPlace
 import Search from "../app/components/elements/Search/Search";
 
 interface IHome {
-  places: IPlace[];
+  initialPlaces: IPlace[];
 }
 
-const Home: NextPage<IHome> = ({ places }) => {
+const Home: NextPage<IHome> = ({ initialPlaces }) => {
+  const [places, setPlaces] = useState(initialPlaces);
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <Layout>
       <HeadingSection />
       <div style={{ width: "85%", margin: "0 auto" }}>
-        <Search />
-        <Filters />
-        <PopularPlaces places={places} />
+        <Search
+          setPlaces={setPlaces}
+          initialPlaces={initialPlaces}
+          setIsLoading={setIsLoading}
+        />
+        <Filters setPlaces={setPlaces} />
+        <PopularPlaces places={places} isLoading={isLoading} />
       </div>
     </Layout>
   );
@@ -27,11 +35,11 @@ const Home: NextPage<IHome> = ({ places }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const result = await fetch(`${API_URL}/places`);
-  const places = await result.json();
+  const initialPlaces = await result.json();
 
   return {
     props: {
-      places,
+      initialPlaces,
     },
   };
 };

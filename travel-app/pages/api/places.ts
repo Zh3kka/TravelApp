@@ -1,8 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { IPlace } from "../../app/types/place";
-import miamiImg from '../../assets/images/miami.jpg';
-import losAngelesImg from '../../assets/images/LA.jpg';
-import tokyoImg from '../../assets/images/tokyo.jpg';
 
 const places: IPlace[] = [
     {
