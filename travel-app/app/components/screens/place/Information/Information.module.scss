@@ -1,0 +1,54 @@
+@import "../../../../../assets/styles/variables";
+.wrapper {
+    border: 1px dotted $accent;
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    .heading {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        > h1 {
+            color: $white;
+            font-size: 28px;
+        }
+    }
+
+    > p {
+        color: $white;
+        opacity: 0.8;
+    }
+
+    .additional {
+        margin-top: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 100px;
+
+        .rating {
+            display: flex;
+            align-items: center;
+            padding: 5px 15px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            gap: 8px;
+            > span {
+                color: $white;
+                font-weight: medium;
+            }
+        }
+        .duration {
+            display: flex;
+            align-items: center;
+            border-radius: 15px;
+            padding: 5px 15px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            gap: 8px;
+            > span {
+                color: $white;
+                font-weight: medium;
+            }
+        }
+    }
+}

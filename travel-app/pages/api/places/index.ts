@@ -6,7 +6,7 @@ export const places: IPlace[] = [
         slug: 'Miami',
         location: { country: 'USA', city: 'Miami' },
         imagePath: 'http://localhost:3000/images/places/miami.jpg',
-        description: 'lorem',
+        description: 'Miami, the main resort not only in Florida, but also in the United States as a whole, offers tourists endless sunny beaches, a mild climate and a lot of entertainment for every taste. The main tourist areas in Miami are the world-famous Miami Beach and South Beach.',
         rating: 5,
         duration: '5 days',
         distance: 10,
